@@ -1,0 +1,744 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <?php include_once 'header.php'?>
+
+<body>
+<!-- header-top start -->
+
+
+<!-- Welcome Hero -->
+<section id="home" class="welcome-hero" style="background: url('assets/images/turkey/cappadocia.jpg') no-repeat center center/cover;">
+    <div class="container">
+        <div class="welcome-hero-txt">
+            <h2>Explore Cappadocia</h2>
+            <p>Discover the magical landscapes and hot air balloons of Cappadocia.</p>
+        </div>
+        <div class="welcome-hero-serch-box">
+            <div class="welcome-hero-form">
+                <div class="single-welcome-hero-form">
+                    <h3>location</h3>
+					<form onsubmit="searchCity(event)">
+                    <form action="cappadocia.php">
+                        <input type="text" id="location-input" placeholder="Ex: Istanbul, Antalya, Izmir...">
+                    </form>
+                </div>
+            </div>
+            <div class="welcome-hero-serch">
+                <button class="welcome-hero-btn" onclick="searchCity(event)">search</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+	<!--list-topics start -->
+	<section id="list-topics" class="list-topics">
+	<div class="container">
+		<div class="list-topics-content">
+			<ul>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/Antalya.jpg" style="width: 100px;" alt="Antalya" onclick="openPopup('assets/images/turkey/Antalya.jpg')">
+						</div>
+						<h2><a href="antalya.php">Antalya</a></h2>
+						<p>Turquoise Coast Vibes</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/Izmir.jpg" style="width: 100px;" alt="Izmir" onclick="openPopup('assets/images/turkey/Izmir.jpg')">
+						</div>
+						<h2><a href="izmir.php">Izmir</a></h2>
+						<p>Modern and Historic</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/Pamukkale.jpg" style="width: 100px;" alt="Pamukkale" onclick="openPopup('assets/images/turkey/Pamukkale.jpg')">
+						</div>
+						<h2><a href="pamukkale.php">Pamukkale</a></h2>
+						<p>Thermal Springs & Wonders</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/bursa.jpg" style="width: 100px;" alt="Bursa" onclick="openPopup('assets/images/turkey/bursa.jpg')">
+						</div>
+						<h2><a href="bursa.php">Bursa</a></h2>
+						<p>Discover the green city.</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/ankara.jpg" style="width: 100px;" alt="Ankara" onclick="openPopup('assets/images/turkey/ankara.jpg')">
+						</div>
+						<h2><a href="ankara.php">Ankara</a></h2>
+						<p>Discover the political heart.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- Fereastra pop-up (ascunsă inițial) -->
+<!-- Fereastra pop-up pentru imagini -->
+<div id="popup" class="popup" style="display: none;">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-img" class="popup-content" src="" alt="Pop-up Imagine">
+</div>
+
+
+
+	
+<!-- Explore Cappadocia -->
+<section id="explore" class="explore">
+    <div class="container">
+        <div class="section-header">
+            <h2>Explore Cappadocia</h2>
+        </div>
+        <div class="explore-content">
+            <div class="row">
+
+                <!-- Göreme Open-Air Museum -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/goreme.jpg" alt="Goreme Open-Air Museum">
+      <div class="single-explore-img-info">
+        <button>historic</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Goreme', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Goreme Museum, Cappadocia')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">Göreme Open-Air Museum</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.9</span>
+        <a href="#">120 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">150 TL</span></span>
+        <a href="#">Museum</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Rock-cut churches with stunning frescoes, a UNESCO World Heritage Site.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hot Air Balloon Ride -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/Hot-Air-Balloon.jpg" alt="Hot Air Balloon Ride">
+      <div class="single-explore-img-info">
+        <button>adventure</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Hot Air Balloon', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Goreme, Cappadocia')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-2">
+      <h2><a href="#">Hot Air Balloon Ride</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">5.0</span>
+        <a href="#">250 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">2500 TL</span></span>
+        <a href="#">Experience</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>The ultimate Cappadocia experience: flying over the fairy chimneys at sunrise.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Uchisar Castle -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/uchisar-castle.jpg" alt="Uchisar Castle">
+      <div class="single-explore-img-info">
+        <button>viewpoint</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Uchisar Castle', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Uchisar Castle, Cappadocia')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">Uchisar Castle</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.7</span>
+        <a href="#">85 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">50 TL</span></span>
+        <a href="#">Castle</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>The highest point in Cappadocia with panoramic views over the valleys.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Love Valley -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/love-valley.jpg" alt="Love Valley">
+      <div class="single-explore-img-info">
+        <button>nature</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Love Valley', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Love Valley, Cappadocia')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-2">
+      <h2><a href="#">Love Valley</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.8</span>
+        <a href="#">65 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+        <a href="#">Valley</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Famous for its unique rock formations and stunning hiking trails.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Derinkuyu Underground City -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/derinkuyu.jpg" alt="Derinkuyu Underground City">
+      <div class="single-explore-img-info">
+        <button>underground</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Derinkuyu', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Derinkuyu Underground City')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">Derinkuyu Underground City</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.6</span>
+        <a href="#">70 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">100 TL</span></span>
+        <a href="#">Underground</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>An incredible multi-level ancient underground city capable of housing thousands of people.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pasabag (Monks Valley) -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/pasabag.jpg" alt="Pasabag Monks Valley">
+      <div class="single-explore-img-info">
+        <button>nature</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Pasabag', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Pasabag Valley, Cappadocia')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-2">
+      <h2><a href="#">Pasabag (Monks Valley)</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.7</span>
+        <a href="#">75 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+        <a href="#">Valley</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Magical valley famous for its giant fairy chimneys and surreal landscape.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+</section>
+
+<!-- Modal pentru hartă -->
+<div id="mapModal" class="popup" style="display: none; position: fixed; z-index: 10000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 600px; height: 400px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+    <span class="close" onclick="closeMap()" style="position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer;">&times;</span>
+    <iframe id="mapIframe" src="" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<section id="reviews" class="reviews">
+	<div class="section-header">
+		<h2>clients reviews</h2>
+		<p>What our clients say about Cappadocia!</p>
+	</div>
+	<div class="reviews-content">
+		<div class="testimonial-carousel">
+
+			<!-- Review 1 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c1.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Elif Kaya</h2>
+							<h4>Cappadocia</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"The balloon ride at sunrise was one of the best experiences of my life!"</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review 2 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c2.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Thomas Müller</h2>
+							<h4>Cappadocia</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Unique landscape and fairy chimneys. Felt like I was on another planet."</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review 3 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c3.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Nazlı Aydın</h2>
+							<h4>Cappadocia</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Yeraltı şehirleri, kaya otelleri, hepsi harikaydı. Masal gibi bir yer."</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review 4 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c4.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Ana Oliveira</h2>
+							<h4>Cappadocia</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"It was magical but very touristy in some areas. Still worth seeing!"</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review 5 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c5.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Omar Idris</h2>
+							<h4>Cappadocia</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"The cave hotel experience was unforgettable. Romantic and authentic."</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review 6 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c6.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Teodora Enache</h2>
+							<h4>Cappadocia</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Răsăritul cu baloane a fost wow! Nu am mai văzut așa ceva niciodată."</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+		<!--reviews end -->
+		<!--blog start -->
+<section id="blog" class="blog">
+	<div class="container">
+		<div class="section-header">
+			<h2>FUN FACTS</h2>
+			<p>Fresh updates and fun facts to inspire your next Turkish adventure.</p>
+		</div><!--/.section-header-->
+		<div class="blog-content">
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/cappadocia1.jpg" alt="Hot air balloons Cappadocia">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Balloon capital of the world</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> april 2025</h4>
+							<p>
+								Cappadocia is one of the top hot air ballooning destinations globally, with hundreds launching at sunrise daily!
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/cappadocia2.jpg" alt="Underground city">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Underground cities</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> april 2025</h4>
+							<p>
+								Cappadocia hides entire underground cities like Derinkuyu, once home to thousands during invasions.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/cappadocia3.jpg" alt="Fairy chimneys">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Home of fairy chimneys</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> may 2025</h4>
+							<p>
+								The surreal “fairy chimneys” are volcanic rock formations shaped by wind and rain over millennia — unique to Cappadocia.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/.container-->
+</section><!--/.blog-->
+
+		<!--blog end -->
+
+		<!--subscription strat -->
+		<section id="contact"  class="subscription">
+			<div class="container">
+				<div class="subscribe-title text-center">
+					<h2>
+						Plan Your Trip
+					</h2>
+					<p>
+						Do you have questions about famous landmarks in Turkey or need help planning your cultural journey?<br> Get in touch with us – we’re here to guide you!
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="subscription-input-group">
+							<form action="#">
+								<input type="email" class="subscription-input-form" placeholder="Enter your email here">
+								<button class="appsLand-btn subscribe-btn" onclick="submitEmailLogin(event)">
+    create account
+</button>
+
+							</form>
+						</div>
+					</div>	
+				</div>
+			</div>
+
+		</section><!--/subscription-->	
+		<!--subscription end -->
+
+		<!--footer start-->
+		<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="footer-menu">
+		           	<div class="row">
+			           	<div class="col-sm-3">
+			           		 <div class="navbar-header">
+				                <a class="navbar-brand" href="index.php">explore<span>turkey</span></a>
+				            </div><!--/.navbar-header-->
+			           	</div>
+			           	<div class="col-sm-9">
+			           		<ul class="footer-menu-item">			         
+			                    <li class="scroll"><a href="#explore">explore</a></li>
+			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                    <li class="scroll"><a href="#blog">blog</a></li>
+			                    <li class="scroll"><a href="#contact">contact</a></li>
+			                    <li class=" scroll"><a href="#contact">my account</a></li>
+			                </ul><!--/.nav -->
+			           	</div>
+		           </div>
+				</div>
+				<div class="hm-footer-copyright">
+					<div class="row">
+						<div class="col-sm-5">
+							<p>
+								&copy;copyright. designed and developed by Alice, Ioana & Andreea.
+							</p><!--/p-->
+						</div>
+						<div class="col-sm-7">
+							<div class="footer-social">
+								<span><i class="fa fa-phone"> +1  (222) 777 8888</i></span>
+								<a href="#facebook"><i class="fa fa-facebook"></i></a>	
+								<a href="#twitter"><i class="fa fa-twitter"></i></a>
+								<a href="#linkedin"><i class="fa fa-linkedin"></i></a>
+								<a href="#googleplus"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					
+				</div><!--/.hm-footer-copyright-->
+			</div><!--/.container-->
+			
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-->
+		<!--footer end-->
+		<!-- Message box -->
+     <div id="message-box" class="message-box hidden"></div>
+<!-- Slide simplu pentru My Favorites -->
+<div id="favorites-panel" class="favorites-slide">
+  <span class="close-favorites" onclick="toggleFavoritesPanel()">x</span>
+  <h3 class="favorites-title">My Favorites</h3>
+  <div class="favorites-list"></div> <!-- Asta lipsea! -->
+  <div id="message-box" class="message-box hidden"></div>
+</div>
+
+
+<!-- Modal pentru hartă -->
+<div id="mapModal" class="popup" style="display: none; position: fixed; z-index: 10000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 600px; height: 400px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+    <span class="close" onclick="closeMap()" style="position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer;">&times;</span>
+    <iframe id="mapIframe" src="" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- Include all js compiled plugins (below), or include individual files as needed -->
+  <script>
+let lastScrollTop = 0;
+const header = document.querySelector('.header-area');
+
+window.addEventListener('scroll', function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+        // scroll în jos → ascunde
+        header.classList.add('hide');
+    } else {
+        // scroll în sus → arată
+        header.classList.remove('hide');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+</script>
+
+<script src="assets/js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		<script>
+    /*const citiesInTurkey = [
+        "istanbul", "ankara", "izmir", "antalya", "bursa",
+        "adana", "gaziantep", "konya", "trabzon", "kayseri",
+        "mardin", "sanliurfa", "cappadocia", "pamukkale"
+    ];*/
+
+    function searchCity(event) {
+    event.preventDefault();
+    const input = document.getElementById("location-input").value.trim().toLowerCase();
+
+    const citiesMap = {
+        "istanbul": "istanbul.php",
+        "ankara": "ankara.php",
+        "izmir": "izmir.php",
+        "antalya": "antalya.php",
+        "bursa": "bursa.php",
+        "adana": "adana.php",
+        "gaziantep": "gaziantep.php",
+        "konya": "konya.php",
+        "trabzon": "trabzon.php",
+        "kayseri": "kayseri.php",
+        "mardin": "mardin.php",
+        "sanliurfa": "sanliurfa.php",
+        "cappadocia": "cappadocia.php",
+        "pamukkale": "pamukkale.php"
+    };
+
+    if (citiesMap[input]) {
+        window.location.href = citiesMap[input];
+    } else {
+        alert("The city is not on our list in Turkey. Try another one!");
+    }
+}
+
+
+</script>
+<!-- Pop-up pentru text (How It Works) -->
+<div id="popuptext" class="popuptext" style="display: none;">
+    <span class="close" onclick="closePopupText()">&times;</span>
+    <div class="popuptext-content">
+        <p id="popuptext-content-text"></p>
+    </div>
+</div>
+
+
+
+ <script>
+function openPopupText(text) {
+    document.getElementById("popuptext-content-text").innerText = text;
+    document.getElementById("popuptext").style.display = "flex";
+}
+
+function closePopupText() {
+    document.getElementById("popuptext").style.display = "none";
+}
+</script>
+
+<script>
+function openMap(location) {
+    const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(location)}&output=embed`;
+    document.getElementById('mapIframe').src = mapUrl;
+    document.getElementById('mapModal').style.display = 'block';
+}
+
+function closeMap() {
+    document.getElementById('mapModal').style.display = 'none';
+    document.getElementById('mapIframe').src = ''; // reset la închidere
+}
+</script>
+
+
+<!-- JAVASCRIPTS -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/locations.js"></script>
+        <script src="assets/js/favorites.js"></script>
+
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,781 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <?php include_once 'header.php'?>
+
+<body>
+<!-- header-top start -->
+<header id="header-top" class="header-top">
+    <ul>
+        <li>
+            <div class="header-top-left">
+                <ul>
+                    <li class="select-opt">
+                        <select name="language" id="language">
+                            <option value="default">EN</option>
+                        </select>
+                    </li>
+                    <li class="select-opt">
+                        <select name="currency" id="currency">
+                            <option value="usd">USD</option>
+                        </select>
+                    </li>
+                    <li class="select-opt">
+                        <a href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</header>
+
+<!-- Navigation Start -->
+<section class="top-area">
+    <div class="header-area">
+        <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.php">explore<span>turkey</span></a>
+                </div>
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="scroll active"><a href="#home">home</a></li>
+                        <li class="scroll"><a href="#explore">explore</a></li>
+                        <li class="scroll"><a href="#reviews">review</a></li>
+						<li class="scroll"><a href="#blog">blog</a></li>
+                        <li class="scroll"><a href="#contact">contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<!-- Welcome Hero -->
+<section id="home" class="welcome-hero" style="background: url('assets/images/turkey/Pamukkale.jpg') no-repeat center center/cover;">
+    <div class="container">
+        <div class="welcome-hero-txt">
+            <h2>Explore Pamukkale</h2>
+            <p>Discover the stunning white travertine terraces and ancient ruins of Hierapolis.</p>
+        </div>
+        <div class="welcome-hero-serch-box">
+            <div class="welcome-hero-form">
+                <div class="single-welcome-hero-form">
+                    <h3>location</h3>
+					<form onsubmit="searchCity(event)">
+                    <form action="pamukkale.php">
+                        <input type="text" id="location-input" placeholder="Ex: Istanbul, Antalya, Izmir...">
+                    </form>
+                </div>
+            </div>
+            <div class="welcome-hero-serch">
+                <button class="welcome-hero-btn" onclick="searchCity(event)">search</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+	<!--list-topics start -->
+	<section id="list-topics" class="list-topics">
+	<div class="container">
+		<div class="list-topics-content">
+			<ul>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/bursa.jpg" style="width: 100px;" alt="Bursa" onclick="openPopup('assets/images/turkey/bursa.jpg')">
+						</div>
+						<h2><a href="bursa.php">Bursa</a></h2>
+						<p>Discover the green city.</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/ankara.jpg" style="width: 100px;" alt="Ankara" onclick="openPopup('assets/images/turkey/ankara.jpg')">
+						</div>
+						<h2><a href="ankara.php">Ankara</a></h2>
+						<p>Discover the political heart.</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/gaziantep.jpg" style="width: 100px;" alt="Gaziantep" onclick="openPopup('assets/images/turkey/gaziantep.jpg')">
+						</div>
+						<h2><a href="gaziantep.php">Gaziantep</a></h2>
+						<p>Discover the delicious cuisine.</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/konya.jpg" style="width: 100px;" alt="Konya" onclick="openPopup('assets/images/turkey/konya.jpg')">
+						</div>
+						<h2><a href="konya.php">Konya</a></h2>
+						<p>Modern and Historic</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/trabzon.jpg" style="width: 100px;" alt="Trabzon" onclick="openPopup('assets/images/turkey/trabzon.jpg')">
+						</div>
+						<h2><a href="trabzon.php">Trabzon</a></h2>
+						<p>Experience the landscapes</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- Fereastra pop-up (ascunsă inițial) -->
+<!-- Fereastra pop-up pentru imagini -->
+<div id="popup" class="popup" style="display: none;">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-img" class="popup-content" src="" alt="Pop-up Imagine">
+</div>
+
+	
+<!-- Explore Pamukkale -->
+<section id="explore" class="explore">
+    <div class="container">
+        <div class="section-header">
+            <h2>Explore Pamukkale</h2>
+        </div>
+        <div class="explore-content">
+            <div class="row">
+<!-- 1. Travertine Terraces -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/travertines.jpg" alt="Travertine Terraces">
+      <div class="single-explore-img-info">
+        <button>nature</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Travertines', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Pamukkale Travertines')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">Travertine Terraces</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">5.0</span>
+        <a href="#">300 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">200 TL</span></span>
+        <a href="#">Natural Wonder</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Famous white terraces of mineral-rich thermal waters cascading down hillsides.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Hierapolis Ancient City -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/hierapolis.jpg" alt="Hierapolis Ancient City">
+      <div class="single-explore-img-info">
+        <button>historic</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Hierapolis', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Hierapolis, Pamukkale')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-2">
+      <h2><a href="#">Hierapolis Ancient City</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.9</span>
+        <a href="#">220 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">Included</span></span>
+        <a href="#">Ruins</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Greco-Roman city built atop the hot springs, UNESCO World Heritage site.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Cleopatra's Pool -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/cleopatra-pool.jpg" alt="Cleopatra's Pool">
+      <div class="single-explore-img-info">
+        <button>relaxation</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Cleopatra Pool', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Cleopatra Pool, Pamukkale')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">Cleopatra's Pool</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.7</span>
+        <a href="#">180 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">130 TL</span></span>
+        <a href="#">Thermal Pool</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Swim among ancient Roman columns in naturally heated waters said to have healing powers.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. Pamukkale Antique Pool -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/antique-pool.jpg" alt="Pamukkale Antique Pool">
+      <div class="single-explore-img-info">
+        <button>thermal</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Antique Pool', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Antique Pool, Pamukkale')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-2">
+      <h2><a href="#">Pamukkale Antique Pool</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.8</span>
+        <a href="#">150 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">130 TL</span></span>
+        <a href="#">Thermal Pool</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Another famous thermal pool perfect for bathing among ancient ruins.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. Pamukkale Natural Park -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/Pamukkale-Natural-Park.jpg" alt="Pamukkale Natural Park">
+      <div class="single-explore-img-info">
+        <button>park</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Pamukkale Natural Park', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Pamukkale Natural Park')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">Pamukkale Natural Park</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.5</span>
+        <a href="#">90 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+        <a href="#">Park</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>A relaxing green park with ponds, cafés, and a stunning view of the terraces.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Laodicea Ancient City -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/laodicea.jpg" alt="Laodicea Ancient City">
+      <div class="single-explore-img-info">
+        <button>archaeology</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Laodicea', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Laodicea, Denizli')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-2">
+      <h2><a href="#">Laodicea Ancient City</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.7</span>
+        <a href="#">100 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">30 TL</span></span>
+        <a href="#">Ruins</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Important ancient city with impressive Roman streets, temples, and theatres.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                 
+    </div>
+</section>
+
+<!-- Modal pentru hartă -->
+<div id="mapModal" class="popup" style="display: none; position: fixed; z-index: 10000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 600px; height: 400px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+    <span class="close" onclick="closeMap()" style="position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer;">&times;</span>
+    <iframe id="mapIframe" src="" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+		<!--reviews start -->
+<section id="reviews" class="reviews"> <div class="section-header"> <h2>clients reviews</h2> <p>What our clients say about Pamukkale!</p> </div> <div class="reviews-content"> <div class="testimonial-carousel">
+
+		<!-- Review 1 -->
+		<div class="single-testimonial-box">
+			<div class="testimonial-description">
+				<div class="testimonial-info">
+					<div class="testimonial-img"><img src="assets/images/clients/c1.png" alt="client"></div>
+					<div class="testimonial-person">
+						<h2>Selin Yılmaz</h2>
+						<h4>Pamukkale</h4>
+						<div class="testimonial-person-star">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-comment">
+					<p>"Bembeyaz travertenler ve sıcak su havuzları muhteşemdi. Unutulmaz bir deneyim!"</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Review 2 -->
+		<div class="single-testimonial-box">
+			<div class="testimonial-description">
+				<div class="testimonial-info">
+					<div class="testimonial-img"><img src="assets/images/clients/c2.png" alt="client"></div>
+					<div class="testimonial-person">
+						<h2>Lucas Meyer</h2>
+						<h4>Pamukkale</h4>
+						<div class="testimonial-person-star">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-comment">
+					<p>"The natural pools are stunning, but it gets crowded in the afternoon. Go early for the best photos."</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Review 3 -->
+		<div class="single-testimonial-box">
+			<div class="testimonial-description">
+				<div class="testimonial-info">
+					<div class="testimonial-img"><img src="assets/images/clients/c3.png" alt="client"></div>
+					<div class="testimonial-person">
+						<h2>Elif Demir</h2>
+						<h4>Pamukkale</h4>
+						<div class="testimonial-person-star">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-comment">
+					<p>"Hierapolis antik kentiyle birlikte gezmek harika. Hem tarih hem doğa bir arada."</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Review 4 -->
+		<div class="single-testimonial-box">
+			<div class="testimonial-description">
+				<div class="testimonial-info">
+					<div class="testimonial-img"><img src="assets/images/clients/c4.png" alt="client"></div>
+					<div class="testimonial-person">
+						<h2>Anna Rossi</h2>
+						<h4>Pamukkale</h4>
+						<div class="testimonial-person-star">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-comment">
+					<p>"Beautiful place, but walking barefoot on the travertines can be slippery. Bring water shoes!"</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Review 5 -->
+		<div class="single-testimonial-box">
+			<div class="testimonial-description">
+				<div class="testimonial-info">
+					<div class="testimonial-img"><img src="assets/images/clients/c5.png" alt="client"></div>
+					<div class="testimonial-person">
+						<h2>Mehmet Aksoy</h2>
+						<h4>Pamukkale</h4>
+						<div class="testimonial-person-star">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-comment">
+					<p>"Pamukkale'nin manzarasına karşı yüzmek bir başka. Fotoğraf çekmek için harika bir yer."</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Review 6 -->
+		<div class="single-testimonial-box">
+			<div class="testimonial-description">
+				<div class="testimonial-info">
+					<div class="testimonial-img"><img src="assets/images/clients/c6.png" alt="client"></div>
+					<div class="testimonial-person">
+						<h2>Irina Popescu</h2>
+						<h4>Pamukkale</h4>
+						<div class="testimonial-person-star">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-comment">
+					<p>"Peisaj de vis, ape termale relaxante. Recomand pentru o escapadă în natură."</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+</section>
+		<!--reviews end -->
+		<!--blog start -->
+		<section id="blog" class="blog">
+	<div class="container">
+		<div class="section-header">
+			<h2>FUN FACTS</h2>
+			<p>Fresh updates and fun facts to inspire your next Turkish adventure.</p>
+		</div><!--/.section-header-->
+		<div class="blog-content">
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/pamukkale1.jpg" alt="Pamukkale travertines">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>White cotton castles</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> april 2025</h4>
+							<p>
+								“Pamukkale” means “cotton castle” in Turkish — named after its surreal white travertine terraces formed by mineral-rich waters.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/pamukkale2.jpg" alt="Hierapolis ruins Pamukkale">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Ancient spa city</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> april 2025</h4>
+							<p>
+								Pamukkale is also home to the ruins of Hierapolis — a Roman city built around thermal springs, where people came to heal.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/pamukkale3.jpg" alt="Cleopatra Pool Pamukkale">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Swim with history</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> may 2025</h4>
+							<p>
+								In the Cleopatra Pool, you can literally swim among ancient marble columns — believed to have sunk during an earthquake.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/.container-->
+</section><!--/.blog-->
+
+		<!--blog end -->
+
+		<!--subscription strat -->
+		<section id="contact"  class="subscription">
+			<div class="container">
+				<div class="subscribe-title text-center">
+					<h2>
+						Plan Your Trip
+					</h2>
+					<p>
+						Do you have questions about famous landmarks in Turkey or need help planning your cultural journey?<br> Get in touch with us – we’re here to guide you!
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="subscription-input-group">
+							<form action="#">
+								<input type="email" class="subscription-input-form" placeholder="Enter your email here">
+								<button class="appsLand-btn subscribe-btn" onclick="submitEmailLogin(event)">
+    create account
+</button>
+
+							</form>
+						</div>
+					</div>	
+				</div>
+			</div>
+
+		</section><!--/subscription-->	
+		<!--subscription end -->
+
+		<!--footer start-->
+		<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="footer-menu">
+		           	<div class="row">
+			           	<div class="col-sm-3">
+			           		 <div class="navbar-header">
+				                <a class="navbar-brand" href="index.php">explore<span>turkey</span></a>
+				            </div><!--/.navbar-header-->
+			           	</div>
+			           	<div class="col-sm-9">
+			           		<ul class="footer-menu-item">			         
+			                    <li class="scroll"><a href="#explore">explore</a></li>
+			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                    <li class="scroll"><a href="#blog">blog</a></li>
+			                    <li class="scroll"><a href="#contact">contact</a></li>
+			                    <li class=" scroll"><a href="#contact">my account</a></li>
+			                </ul><!--/.nav -->
+			           	</div>
+		           </div>
+				</div>
+				<div class="hm-footer-copyright">
+					<div class="row">
+						<div class="col-sm-5">
+							<p>
+								&copy;copyright. designed and developed by Alice, Ioana & Andreea.
+							</p><!--/p-->
+						</div>
+						<div class="col-sm-7">
+							<div class="footer-social">
+								<span><i class="fa fa-phone"> +1  (222) 777 8888</i></span>
+								<a href="#facebook"><i class="fa fa-facebook"></i></a>	
+								<a href="#twitter"><i class="fa fa-twitter"></i></a>
+								<a href="#linkedin"><i class="fa fa-linkedin"></i></a>
+								<a href="#googleplus"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					
+				</div><!--/.hm-footer-copyright-->
+			</div><!--/.container-->
+			
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-->
+		<!--footer end-->
+		<!-- Message box -->
+     <div id="message-box" class="message-box hidden"></div>
+<!-- Slide simplu pentru My Favorites -->
+<div id="favorites-panel" class="favorites-slide">
+  <span class="close-favorites" onclick="toggleFavoritesPanel()">x</span>
+  <h3 class="favorites-title">My Favorites</h3>
+  <div class="favorites-list"></div> <!-- Asta lipsea! -->
+  <div id="message-box" class="message-box hidden"></div>
+</div>
+
+<!-- Modal pentru hartă -->
+<div id="mapModal" class="popup" style="display: none; position: fixed; z-index: 10000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 600px; height: 400px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+    <span class="close" onclick="closeMap()" style="position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer;">&times;</span>
+    <iframe id="mapIframe" src="" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- Include all js compiled plugins (below), or include individual files as needed -->
+  <script>
+let lastScrollTop = 0;
+const header = document.querySelector('.header-area');
+
+window.addEventListener('scroll', function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+        // scroll în jos → ascunde
+        header.classList.add('hide');
+    } else {
+        // scroll în sus → arată
+        header.classList.remove('hide');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+</script>
+
+<script src="assets/js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		<script>
+    /*const citiesInTurkey = [
+        "istanbul", "ankara", "izmir", "antalya", "bursa",
+        "adana", "gaziantep", "konya", "trabzon", "kayseri",
+        "mardin", "sanliurfa", "cappadocia", "pamukkale"
+    ];*/
+
+    function searchCity(event) {
+    event.preventDefault();
+    const input = document.getElementById("location-input").value.trim().toLowerCase();
+
+    const citiesMap = {
+        "istanbul": "istanbul.php",
+        "ankara": "ankara.php",
+        "izmir": "izmir.php",
+        "antalya": "antalya.php",
+        "bursa": "bursa.php",
+        "adana": "adana.php",
+        "gaziantep": "gaziantep.php",
+        "konya": "konya.php",
+        "trabzon": "trabzon.php",
+        "kayseri": "kayseri.php",
+        "mardin": "mardin.php",
+        "sanliurfa": "sanliurfa.php",
+        "cappadocia": "cappadocia.php",
+        "pamukkale": "pamukkale.php"
+    };
+
+    if (citiesMap[input]) {
+        window.location.href = citiesMap[input];
+    } else {
+        alert("The city is not on our list in Turkey. Try another one!");
+    }
+}
+
+
+</script>
+<!-- Pop-up pentru text (How It Works) -->
+<div id="popuptext" class="popuptext" style="display: none;">
+    <span class="close" onclick="closePopupText()">&times;</span>
+    <div class="popuptext-content">
+        <p id="popuptext-content-text"></p>
+    </div>
+</div>
+
+
+
+ <script>
+function openPopupText(text) {
+    document.getElementById("popuptext-content-text").innerText = text;
+    document.getElementById("popuptext").style.display = "flex";
+}
+
+function closePopupText() {
+    document.getElementById("popuptext").style.display = "none";
+}
+</script>
+
+
+<script>
+function openMap(location) {
+    const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(location)}&output=embed`;
+    document.getElementById('mapIframe').src = mapUrl;
+    document.getElementById('mapModal').style.display = 'block';
+}
+
+function closeMap() {
+    document.getElementById('mapModal').style.display = 'none';
+    document.getElementById('mapIframe').src = ''; // reset la închidere
+}
+</script>
+
+
+<!-- JAVASCRIPTS -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/locations.js"></script>
+<script src="assets/js/favorites.js"></script>
+
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+</body>
+</html>

@@ -1,0 +1,644 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Explore Ankara - ExploreTurkey</title>
+ 
+<body>
+<!-- header-top start -->
+<?php include_once 'header.php'?>
+
+
+
+<!-- Welcome Hero -->
+<section id="home" class="welcome-hero" style="background: url('assets/images/turkey/ankara.jpg') no-repeat center center/cover;">
+    <div class="container">
+        <div class="welcome-hero-txt">
+            <h2>Explore Ankara</h2>
+            <p>Discover the political heart and cultural treasures of Turkey's capital city.</p>
+        </div>
+        <div class="welcome-hero-serch-box">
+            <div class="welcome-hero-form">
+                <div class="single-welcome-hero-form">
+                    <h3>location</h3>
+					<form onsubmit="searchCity(event)">
+                    <form action="ankara.php">
+                        <input type="text" id="location-input" placeholder="Ex: Istanbul, Antalya, Izmir...">
+                    </form>
+                </div>
+            </div>
+            <div class="welcome-hero-serch">
+                <button class="welcome-hero-btn" onclick="searchCity(event)">search</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+	
+<!--list-topics start -->
+	<section id="list-topics" class="list-topics">
+	<div class="container">
+		<div class="list-topics-content">
+			<ul>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/gaziantep.jpg" style="width: 100px;" alt="Gaziantep" onclick="openPopup('assets/images/turkey/gaziantep.jpg')">
+						</div>
+						<h2><a href="gaziantep.php">Gaziantep</a></h2>
+						<p>Discover the delicious cuisine.</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/konya.jpg" style="width: 100px;" alt="Konya" onclick="openPopup('assets/images/turkey/konya.jpg')">
+						</div>
+						<h2><a href="konya.php">Konya</a></h2>
+						<p>Modern and Historic</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/trabzon.jpg" style="width: 100px;" alt="Trabzon" onclick="openPopup('assets/images/turkey/trabzon.jpg')">
+						</div>
+						<h2><a href="trabzon.php">Trabzon</a></h2>
+						<p>Experience the landscapes</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/mardin.jpg" style="width: 100px;" alt="Mardin" onclick="openPopup('assets/images/turkey/mardin.jpg')">
+						</div>
+						<h2><a href="mardin.php">Mardin</a></h2>
+						<p>Experience the ancient city.</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/sanliurfa.jpg" style="width: 100px;" alt="Sanliurfa" onclick="openPopup('assets/images/turkey/sanilurfa.jpg')">
+						</div>
+						<h2><a href="sanliurfa.php">Sanliurfa</a></h2>
+						<p>Discover the city of prophets.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- Fereastra pop-up (ascunsă inițial) -->
+<!-- Fereastra pop-up pentru imagini -->
+<div id="popup" class="popup" style="display: none;">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-img" class="popup-content" src="" alt="Pop-up Imagine">
+</div>
+
+	
+<!-- Explore Ankara -->
+<section id="explore" class="explore">
+    <div class="container">
+        <div class="section-header">
+            <h2>Explore Ankara</h2>
+        </div>
+        <div class="explore-content">
+            <div class="row">
+
+<!-- 1. Anıtkabir -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/anitkabir.jpg" alt="Anıtkabir">
+      <div class="single-explore-img-info">
+        <button>monument</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Anitkabir', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Anitkabir, Ankara')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">Anıtkabir</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">5.0</span>
+        <a href="#">350 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+        <a href="#">Mausoleum</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>The mausoleum of Mustafa Kemal Atatürk, founder of modern Turkey, an iconic site.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Ankara Castle (Ankara Kalesi) -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/ankara-castle.jpg" alt="Ankara Castle">
+      <div class="single-explore-img-info">
+        <button>historic</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Ankara Castle', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Ankara Castle, Ankara')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-2">
+      <h2><a href="#">Ankara Castle</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.7</span>
+        <a href="#">180 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+        <a href="#">Castle</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Historic castle offering beautiful panoramic views over Ankara’s old town.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Museum of Anatolian Civilizations -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/Museum-of-Anatolian-Civilizations.jpg" alt="Museum of Anatolian Civilizations">
+      <div class="single-explore-img-info">
+        <button>museum</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Museum of Anatolian Civilizations', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Museum of Anatolian Civilizations, Ankara')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">Museum of Anatolian Civilizations</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.9</span>
+        <a href="#">220 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">75 TL</span></span>
+        <a href="#">Museum</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Amazing collection of prehistoric artifacts from Anatolia, a must-see in Ankara.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+</section>
+
+<!-- Modal pentru hartă -->
+<div id="mapModal" class="popup" style="display: none; position: fixed; z-index: 10000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 600px; height: 400px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+    <span class="close" onclick="closeMap()" style="position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer;">&times;</span>
+    <iframe id="mapIframe" src="" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+		<!--reviews start -->
+<section id="reviews" class="reviews">
+	<div class="section-header">
+		<h2>clients reviews</h2>
+		<p>What our clients say about Ankara!</p>
+	</div>
+	<div class="reviews-content">
+		<div class="testimonial-carousel">
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c1.png" alt="clients"></div>
+						<div class="testimonial-person">
+							<h2>Ali Demir</h2>
+							<h4>Ankara</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Anıtkabir is a must-visit. The city has a calm, organized feel and excellent museums."</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c2.png" alt="clients"></div>
+						<div class="testimonial-person">
+							<h2>Sarah Thompson</h2>
+							<h4>Ankara</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Clean, modern and full of history. Loved the Rahmi Koç Museum!"</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c3.png" alt="clients"></div>
+						<div class="testimonial-person">
+							<h2>Mehmet Öztürk</h2>
+							<h4>Ankara</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Başkent atmosferi, modern cafenele și cartiere curate. Super liniștit!"</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c4.png" alt="clients"></div>
+						<div class="testimonial-person">
+							<h2>Lina Varga</h2>
+							<h4>Ankara</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"I liked the mix between new buildings and historical places. Great local food too."</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c5.png" alt="clients"></div>
+						<div class="testimonial-person">
+							<h2>Ahmad Saeed</h2>
+							<h4>Ankara</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Public transport is excellent. Quiet, elegant city with soul."</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c6.png" alt="clients"></div>
+						<div class="testimonial-person">
+							<h2>Daria Novak</h2>
+							<h4>Ankara</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Not as crowded as Istanbul, which I loved. Great place for families and couples."</p>
+					</div>
+				</div>
+			</div>
+
+		</div><!--/.testimonial-carousel-->
+	</div><!--/.reviews-content-->
+</section>
+<!--/.reviews-->
+		<!--reviews end -->
+		<!--blog start -->
+		<section id="blog" class="blog">
+	<div class="container">
+		<div class="section-header">
+			<h2>FUN FACTS</h2>
+			<p>Fresh updates and fun facts to inspire your next Turkish adventure.</p>
+		</div><!--/.section-header-->
+		<div class="blog-content">
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/ankara1.jpg" alt="Anitkabir">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Resting Place of Atatürk</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> april 2025</h4>
+							<p>
+								Anıtkabir in Ankara is the grand mausoleum of Mustafa Kemal Atatürk, founder of modern Turkey.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/ankara2.jpg" alt="Angora cats">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Home of the Angora cats</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> april 2025</h4>
+							<p>
+								The fluffy, pure white Turkish Angora cat originated in Ankara — once called “Angora”!
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/ankara3.jpg" alt="Museum of Anatolian Civilizations">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Cradle of Anatolian heritage</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> may 2025</h4>
+							<p>
+								The Museum of Anatolian Civilizations showcases 10,000+ years of rich Anatolian history.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/.container-->
+</section><!--/.blog-->
+
+		<!--blog end -->
+
+		<!--subscription strat -->
+		<section id="contact"  class="subscription">
+			<div class="container">
+				<div class="subscribe-title text-center">
+					<h2>
+						Plan Your Trip
+					</h2>
+					<p>
+						Do you have questions about famous landmarks in Turkey or need help planning your cultural journey?<br> Get in touch with us – we’re here to guide you!
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="subscription-input-group">
+							<form action="#">
+								<input type="email" class="subscription-input-form" placeholder="Enter your email here">
+								<button class="appsLand-btn subscribe-btn" onclick="submitEmailLogin(event)">
+    create account
+</button>
+
+							</form>
+						</div>
+					</div>	
+				</div>
+			</div>
+
+		</section><!--/subscription-->	
+		<!--subscription end -->
+
+		<!--footer start-->
+		<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="footer-menu">
+		           	<div class="row">
+			           	<div class="col-sm-3">
+			           		 <div class="navbar-header">
+				                <a class="navbar-brand" href="index.php">explore<span>turkey</span></a>
+				            </div><!--/.navbar-header-->
+			           	</div>
+			           	<div class="col-sm-9">
+			           		<ul class="footer-menu-item">			         
+			                    <li class="scroll"><a href="#explore">explore</a></li>
+			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                    <li class="scroll"><a href="#blog">blog</a></li>
+			                    <li class="scroll"><a href="#contact">contact</a></li>
+			                    <li class=" scroll"><a href="#contact">my account</a></li>
+			                </ul><!--/.nav -->
+			           	</div>
+		           </div>
+				</div>
+				<div class="hm-footer-copyright">
+					<div class="row">
+						<div class="col-sm-5">
+							<p>
+								&copy;copyright. designed and developed by Alice, Ioana & Andreea.
+							</p><!--/p-->
+						</div>
+						<div class="col-sm-7">
+							<div class="footer-social">
+								<span><i class="fa fa-phone"> +1  (222) 777 8888</i></span>
+								<a href="#facebook"><i class="fa fa-facebook"></i></a>	
+								<a href="#twitter"><i class="fa fa-twitter"></i></a>
+								<a href="#linkedin"><i class="fa fa-linkedin"></i></a>
+								<a href="#googleplus"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					
+				</div><!--/.hm-footer-copyright-->
+			</div><!--/.container-->
+			
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-->
+		<!--footer end-->
+		<!-- Message box -->
+     <div id="message-box" class="message-box hidden"></div>
+<!-- Slide simplu pentru My Favorites -->
+<div id="favorites-panel" class="favorites-slide">
+  <span class="close-favorites" onclick="toggleFavoritesPanel()">x</span>
+  <h3 class="favorites-title">My Favorites</h3>
+  <div class="favorites-list"></div> <!-- Asta lipsea! -->
+  <div id="message-box" class="message-box hidden"></div>
+</div>
+
+
+<!-- Modal pentru hartă -->
+<div id="mapModal" class="popup" style="display: none; position: fixed; z-index: 10000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 600px; height: 400px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+    <span class="close" onclick="closeMap()" style="position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer;">&times;</span>
+    <iframe id="mapIframe" src="" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- Include all js compiled plugins (below), or include individual files as needed -->
+  <script>
+let lastScrollTop = 0;
+const header = document.querySelector('.header-area');
+
+window.addEventListener('scroll', function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+        // scroll în jos → ascunde
+        header.classList.add('hide');
+    } else {
+        // scroll în sus → arată
+        header.classList.remove('hide');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+</script>
+
+<script src="assets/js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		<script>
+    /*const citiesInTurkey = [
+        "istanbul", "ankara", "izmir", "antalya", "bursa",
+        "adana", "gaziantep", "konya", "trabzon", "kayseri",
+        "mardin", "sanliurfa", "cappadocia", "pamukkale"
+    ];*/
+
+    function searchCity(event) {
+    event.preventDefault();
+    const input = document.getElementById("location-input").value.trim().toLowerCase();
+
+    const citiesMap = {
+        "istanbul": "istanbul.php",
+        "ankara": "ankara.php",
+        "izmir": "izmir.php",
+        "antalya": "antalya.php",
+        "bursa": "bursa.php",
+        "adana": "adana.php",
+        "gaziantep": "gaziantep.php",
+        "konya": "konya.php",
+        "trabzon": "trabzon.php",
+        "kayseri": "kayseri.php",
+        "mardin": "mardin.php",
+        "sanliurfa": "sanliurfa.php",
+        "cappadocia": "cappadocia.php",
+        "pamukkale": "pamukkale.php"
+    };
+
+    if (citiesMap[input]) {
+        window.location.href = citiesMap[input];
+    } else {
+        alert("The city is not on our list in Turkey. Try another one!");
+    }
+}
+
+
+</script>
+<!-- Pop-up pentru text (How It Works) -->
+<div id="popuptext" class="popuptext" style="display: none;">
+    <span class="close" onclick="closePopupText()">&times;</span>
+    <div class="popuptext-content">
+        <p id="popuptext-content-text"></p>
+    </div>
+</div>
+
+
+
+ <script>
+function openPopupText(text) {
+    document.getElementById("popuptext-content-text").innerText = text;
+    document.getElementById("popuptext").style.display = "flex";
+}
+
+function closePopupText() {
+    document.getElementById("popuptext").style.display = "none";
+}
+</script>
+
+
+<script>
+function openMap(location) {
+    const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(location)}&output=embed`;
+    document.getElementById('mapIframe').src = mapUrl;
+    document.getElementById('mapModal').style.display = 'block';
+}
+
+function closeMap() {
+    document.getElementById('mapModal').style.display = 'none';
+    document.getElementById('mapIframe').src = ''; // reset la închidere
+}
+</script>
+
+
+        <!-- JAVASCRIPTS -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/locations.js"></script>
+<script src="assets/js/favorites.js"></script>
+
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+</body>
+</html>

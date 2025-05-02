@@ -1,0 +1,817 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <?php include_once 'header.php'?>
+<body>
+<!-- header-top start -->
+<header id="header-top" class="header-top">
+    <ul>
+        <li>
+            <div class="header-top-left">
+                <ul>
+                    <li class="select-opt">
+                        <select name="language" id="language">
+                            <option value="default">EN</option>
+                        </select>
+                    </li>
+                    <li class="select-opt">
+                        <select name="currency" id="currency">
+                            <option value="usd">USD</option>
+                        </select>
+                    </li>
+                    <li class="select-opt">
+                        <a href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</header>
+
+<!-- Navigation Start -->
+<section class="top-area">
+    <div class="header-area">
+        <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.php">explore<span>turkey</span></a>
+                </div>
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="scroll active"><a href="#home">home</a></li>
+                        <li class="scroll"><a href="#explore">explore</a></li>
+                        <li class="scroll"><a href="#reviews">review</a></li>
+						<li class="scroll"><a href="#blog">blog</a></li>
+                        <li class="scroll"><a href="#contact">contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<!-- Welcome Hero -->
+<section id="home" class="welcome-hero" style="background: url('assets/images/turkey/istanbul.jpg') no-repeat center center/cover;">
+    <div class="container">
+        <div class="welcome-hero-txt">
+             <h2>Explore Istanbul</h2>
+            <p>Discover the magical blend of Europe and Asia, from Hagia Sophia to the Bosphorus shores.</p>
+        </div>
+        <div class="welcome-hero-serch-box">
+            <div class="welcome-hero-form">
+                <div class="single-welcome-hero-form">
+                    <h3>location</h3>
+					<form onsubmit="searchCity(event)">
+                    <form action="antalya.php">
+                        <input type="text" id="location-input" placeholder="Ex: Istanbul, Antalya, Izmir...">
+                    </form>
+                </div>
+            </div>
+            <div class="welcome-hero-serch">
+                <button class="welcome-hero-btn" onclick="searchCity(event)">search</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+	<!--list-topics start -->
+	<section id="list-topics" class="list-topics">
+	<div class="container">
+		<div class="list-topics-content">
+			<ul>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/cappadocia.jpg" style="width: 100px;" alt="Cappadocia" onclick="openPopup('assets/images/turkey/cappadocia.jpg')">
+						</div>
+						<h2><a href="cappadocia.php">Cappadocia</a></h2>
+						<p>Hot Air Balloon Paradise</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/Antalya.jpg" style="width: 100px;" alt="Antalya" onclick="openPopup('assets/images/turkey/Antalya.jpg')">
+						</div>
+						<h2><a href="antalya.php">Antalya</a></h2>
+						<p>Turquoise Coast Vibes</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/Izmir.jpg" style="width: 100px;" alt="Izmir" onclick="openPopup('assets/images/turkey/Izmir.jpg')">
+						</div>
+						<h2><a href="izmir.php">Izmir</a></h2>
+						<p>Modern and Historic</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/Pamukkale.jpg" style="width: 100px;" alt="Pamukkale" onclick="openPopup('assets/images/turkey/Pamukkale.jpg')">
+						</div>
+						<h2><a href="pamukkale.php">Pamukkale</a></h2>
+						<p>Thermal Springs & Wonders</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/bursa.jpg" style="width: 100px;" alt="Bursa" onclick="openPopup('assets/images/turkey/bursa.jpg')">
+						</div>
+						<h2><a href="bursa.php">Bursa</a></h2>
+						<p>Discover the green city.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- Fereastra pop-up (ascunsă inițial) -->
+<!-- Fereastra pop-up pentru imagini -->
+<div id="popup" class="popup" style="display: none;">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-img" class="popup-content" src="" alt="Pop-up Imagine">
+</div>
+
+
+	
+		<!--welcome-hero end -->
+<!-- Explore Istanbul -->
+<section id="explore" class="explore">
+    <div class="container">
+        <div class="section-header">
+            <h2>Explore Istanbul</h2>
+        </div>
+        <div class="explore-content">
+            <div class="row">
+
+                <!-- 1. Hagia Sophia -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="assets/images/explore/hagia-sophia.jpg" alt="Hagia Sophia">
+                            <div class="single-explore-img-info">
+                                <button>best rated</button>
+                                <div class="single-explore-image-icon-box">
+                                    <ul>
+                                        <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Hagia Sophia' , this.querySelector('i'))"><i class="fa fa-heart-o"></i></a>
+</div></li>
+                                        <li><div class="single-explore-image-icon">
+                                        <a href="#" onclick="event.preventDefault(); openMap('Hagia Sophia, Istanbul')">
+                                        <i class="fa fa-map-marker"></i>
+                                        </a>
+                                        </div></li>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-1">
+                            <h2><a href="#">Hagia Sophia</a></h2>
+                            <p class="explore-rating-price">
+                                <span class="explore-rating">4.9</span>
+                                <a href="#">25 ratings</a>
+                                <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+                                <a href="#">Monument</a>
+                            </p>
+                            <div class="explore-person">
+                                <div class="row">
+                                    <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+                                    <div class="col-sm-10"><p>Former cathedral and mosque, now an iconic museum in Istanbul.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Topkapi Palace -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-explore-item">
+                        <div class="single-explore-img">
+                            <img src="assets/images/explore/topkapi.jpg" alt="Topkapi Palace">
+                            <div class="single-explore-img-info">
+                                <button>historic</button>
+                                <div class="single-explore-image-icon-box">
+                                    <ul>
+                                        <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Topkapi', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+                                        <li><div class="single-explore-image-icon">
+                                            <a href="#" onclick="event.preventDefault(); openMap('Topkapi Palace, Turkey')">
+                                            <i class="fa fa-map-marker"></i>
+                                            </a>
+                                            </div></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-explore-txt bg-theme-4">
+                            <h2><a href="#">Topkapi Palace</a></h2>
+                            <p class="explore-rating-price">
+                                <span class="explore-rating">4.6</span>
+                                <a href="#">19 ratings</a>
+                                <span class="explore-price-box">price: <span class="explore-price">200 TL</span></span>
+                                <a href="#">Palace</a>
+                            </p>
+                            <div class="explore-person">
+                                <div class="row">
+                                    <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+                                    <div class="col-sm-10"><p>Former residence of the Ottoman sultans — now an open-air museum.</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				<!-- 3. Blue Mosque -->
+				<div class="col-md-4 col-sm-6">
+    <div class="single-explore-item">
+        <div class="single-explore-img">
+            <img src="assets/images/explore/blue-mosque.jpg" alt="Blue Mosque">
+            <div class="single-explore-img-info">
+                <button>historic</button>
+                <div class="single-explore-image-icon-box">
+                    <ul>
+                        <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Blue Mosque', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+                        <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Blue Mosque, Istanbul')"><i class="fa fa-map-marker"></i></a></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="single-explore-txt bg-theme-2">
+            <h2><a href="#">Blue Mosque</a></h2>
+            <p class="explore-rating-price">
+                <span class="explore-rating">4.8</span>
+                <a href="#">30 ratings</a>
+                <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+                <a href="#">Mosque</a>
+            </p>
+            <div class="explore-person">
+                <div class="row">
+                    <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+                    <div class="col-sm-10"><p>One of the most beautiful mosques in the world, known for its blue tiles.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 4. Galata Tower -->
+<div class="col-md-4 col-sm-6">
+    <div class="single-explore-item">
+        <div class="single-explore-img">
+            <img src="assets/images/explore/galata-tower.jpg" alt="Galata Tower">
+            <div class="single-explore-img-info">
+                <button>viewpoint</button>
+                <div class="single-explore-image-icon-box">
+                    <ul>
+                        <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Galata Tower', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+                        <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Galata Tower, Istanbul')"><i class="fa fa-map-marker"></i></a></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="single-explore-txt bg-theme-2">
+            <h2><a href="#">Galata Tower</a></h2>
+            <p class="explore-rating-price">
+                <span class="explore-rating">4.6</span>
+                <a href="#">40 ratings</a>
+                <span class="explore-price-box">price: <span class="explore-price">140 TL</span></span>
+                <a href="#">Tower</a>
+            </p>
+            <div class="explore-person">
+                <div class="row">
+                    <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+                    <div class="col-sm-10"><p>Medieval stone tower offering panoramic views over Istanbul.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 5.Dolmabahçe Palace-->
+<div class="col-md-4 col-sm-6">
+    <div class="single-explore-item">
+        <div class="single-explore-img">
+            <img src="assets/images/explore/dolmabahce-palace.jpg" alt="Dolmabahce Palace">
+            <div class="single-explore-img-info">
+                <button>luxury</button>
+                <div class="single-explore-image-icon-box">
+                    <ul>
+                        <li><div class="single-explore-image-icon">
+                            <a href="#" onclick="event.preventDefault(); toggleLike('Dolmabahce Palace', this.querySelector('i'))">
+                                <i class="fa fa-heart-o"></i>
+                            </a>
+                        </div></li>
+                        <li><div class="single-explore-image-icon">
+                            <a href="#" onclick="event.preventDefault(); openMap('Dolmabahce Palace, Istanbul')">
+                                <i class="fa fa-map-marker"></i>
+                            </a>
+                        </div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="single-explore-txt bg-theme-1">
+            <h2><a href="#">Dolmabahçe Palace</a></h2>
+            <p class="explore-rating-price">
+                <span class="explore-rating">4.8</span>
+                <a href="#">50 ratings</a>
+                <span class="explore-price-box">price: <span class="explore-price">300 TL</span></span>
+                <a href="#">Palace</a>
+            </p>
+            <div class="explore-person">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div>
+                    </div>
+                    <div class="col-sm-10">
+                        <p>The grand palace on the Bosphorus, showcasing the splendor of the Ottoman Empire's last sultans.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 6. Basilica Cistern -->
+<div class="col-md-4 col-sm-6">
+    <div class="single-explore-item">
+        <div class="single-explore-img">
+            <img src="assets/images/explore/basilica-cistern.jpg" alt="Basilica Cistern">
+            <div class="single-explore-img-info">
+                <button>underground</button>
+                <div class="single-explore-image-icon-box">
+                    <ul>
+                        <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Basilica Cistern', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+                        <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Basilica Cistern, Istanbul')"><i class="fa fa-map-marker"></i></a></div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="single-explore-txt bg-theme-2">
+            <h2><a href="#">Basilica Cistern</a></h2>
+            <p class="explore-rating-price">
+                <span class="explore-rating">4.7</span>
+                <a href="#">55 ratings</a>
+                <span class="explore-price-box">price: <span class="explore-price">100 TL</span></span>
+                <a href="#">Cistern</a>
+            </p>
+            <div class="explore-person">
+                <div class="row">
+                    <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+                    <div class="col-sm-10"><p>Ancient underground water reservoir featuring iconic Medusa heads and mysterious atmosphere.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--explore end -->
+
+<!-- Modal pentru hartă -->
+<div id="mapModal" class="popup" style="display: none; position: fixed; z-index: 10000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 600px; height: 400px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+    <span class="close" onclick="closeMap()" style="position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer;">&times;</span>
+    <iframe id="mapIframe" src="" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+		<!--reviews start -->
+<section id="reviews" class="reviews">
+	<div class="section-header">
+		<h2>clients reviews</h2>
+		<p>What our clients say about Istanbul!</p>
+	</div>
+	<div class="reviews-content">
+		<div class="testimonial-carousel">
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img">
+							<img src="assets/images/clients/c1.png" alt="clients">
+						</div>
+						<div class="testimonial-person">
+							<h2>Emre Yıldız</h2>
+							<h4>Istanbul</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Amazing mix of history and modern life. Hagia Sophia was breathtaking!"</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img">
+							<img src="assets/images/clients/c2.png" alt="clients">
+						</div>
+						<div class="testimonial-person">
+							<h2>Anna Müller</h2>
+							<h4>Istanbul</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Loved the Bosphorus cruise at sunset. Istanbul is magical!"</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img">
+							<img src="assets/images/clients/c3.png" alt="clients">
+						</div>
+						<div class="testimonial-person">
+							<h2>Omar Farouk</h2>
+							<h4>Istanbul</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Food is delicious everywhere! Especially the kebabs near Sultanahmet."</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img">
+							<img src="assets/images/clients/c4.png" alt="clients">
+						</div>
+						<div class="testimonial-person">
+							<h2>Claire Dubois</h2>
+							<h4>Istanbul</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"The Grand Bazaar is a must-see! Great atmosphere and colorful shops."</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img">
+							<img src="assets/images/clients/c5.png" alt="clients">
+						</div>
+						<div class="testimonial-person">
+							<h2>Yuki Tanaka</h2>
+							<h4>Istanbul</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Blue Mosque was stunning. Definitely a peaceful and impressive place."</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img">
+							<img src="assets/images/clients/c6.png" alt="clients">
+						</div>
+						<div class="testimonial-person">
+							<h2>Alex Popescu</h2>
+							<h4>Istanbul</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Un oraș care îmbină istoria cu viața modernă. M-am simțit în siguranță și inspirat!"</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+		<!--reviews end -->
+		<!--blog start -->
+		<section id="blog" class="blog">
+	<div class="container">
+		<div class="section-header">
+			<h2>FUN FACTS</h2>
+			<p>Fresh updates and fun facts to inspire your next Turkish adventure.</p>
+		</div><!--/.section-header-->
+		<div class="blog-content">
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/istanbul1.jpg" alt="Cats of Istanbul">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>City of cats</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> april 2025</h4>
+							<p>
+								Istanbul’s streets are home to thousands of friendly stray cats — loved, fed, and protected by the locals. Even mosques welcome them!
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/istanbul2.jpg" alt="Hagia Sophia Istanbul">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Church, mosque & museum</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> april 2025</h4>
+							<p>
+								Hagia Sophia has served as a Byzantine cathedral, Ottoman mosque, museum, and now again as a mosque — all in one millennium.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/istanbul3.jpg" alt="Grand Bazaar">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>One of the world’s oldest malls</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> may 2025</h4>
+							<p>
+								The Grand Bazaar in Istanbul dates back to the 15th century and has over 4,000 shops under one roof — a shopper’s dream! <br><br>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/.container-->
+</section><!--/.blog-->
+
+		<!--blog end -->
+
+		<!--subscription strat -->
+		<section id="contact"  class="subscription">
+			<div class="container">
+				<div class="subscribe-title text-center">
+					<h2>
+						Plan Your Trip
+					</h2>
+					<p>
+						Do you have questions about famous landmarks in Turkey or need help planning your cultural journey?<br> Get in touch with us – we’re here to guide you!
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="subscription-input-group">
+							<form action="#">
+								<input type="email" class="subscription-input-form" placeholder="Enter your email here">
+								<button class="appsLand-btn subscribe-btn" onclick="submitEmailLogin(event)">
+    create account
+</button>
+
+							</form>
+						</div>
+					</div>	
+				</div>
+			</div>
+
+		</section><!--/subscription-->	
+		<!--subscription end -->
+
+		<!--footer start-->
+		<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="footer-menu">
+		           	<div class="row">
+			           	<div class="col-sm-3">
+			           		 <div class="navbar-header">
+				                <a class="navbar-brand" href="index.php">explore<span>turkey</span></a>
+				            </div><!--/.navbar-header-->
+			           	</div>
+			           	<div class="col-sm-9">
+			           		<ul class="footer-menu-item">			         
+			                    <li class="scroll"><a href="#explore">explore</a></li>
+			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                    <li class="scroll"><a href="#blog">blog</a></li>
+			                    <li class="scroll"><a href="#contact">contact</a></li>
+			                    <li class=" scroll"><a href="#contact">my account</a></li>
+			                </ul><!--/.nav -->
+			           	</div>
+		           </div>
+				</div>
+				<div class="hm-footer-copyright">
+					<div class="row">
+						<div class="col-sm-5">
+							<p>
+								&copy;copyright. designed and developed by Alice, Ioana & Andreea.
+							</p><!--/p-->
+						</div>
+						<div class="col-sm-7">
+							<div class="footer-social">
+								<span><i class="fa fa-phone"> +1  (222) 777 8888</i></span>
+								<a href="#facebook"><i class="fa fa-facebook"></i></a>	
+								<a href="#twitter"><i class="fa fa-twitter"></i></a>
+								<a href="#linkedin"><i class="fa fa-linkedin"></i></a>
+								<a href="#googleplus"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					
+				</div><!--/.hm-footer-copyright-->
+			</div><!--/.container-->
+			
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-->
+		<!--footer end-->
+		<!-- Message box -->
+     <div id="message-box" class="message-box hidden"></div>
+<!-- Slide simplu pentru My Favorites -->
+<div id="favorites-panel" class="favorites-slide">
+  <span class="close-favorites" onclick="toggleFavoritesPanel()">x</span>
+  <h3 class="favorites-title">My Favorites</h3>
+  <div class="favorites-list"></div> <!-- Asta lipsea! -->
+  <div id="message-box" class="message-box hidden"></div>
+</div>
+
+
+<!-- Modal pentru hartă -->
+<div id="mapModal" class="popup" style="display: none; position: fixed; z-index: 10000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 600px; height: 400px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+    <span class="close" onclick="closeMap()" style="position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer;">&times;</span>
+    <iframe id="mapIframe" src="" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+			
+ <!-- Include all js compiled plugins (below), or include individual files as needed -->
+  <script>
+let lastScrollTop = 0;
+const header = document.querySelector('.header-area');
+
+window.addEventListener('scroll', function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+        // scroll în jos → ascunde
+        header.classList.add('hide');
+    } else {
+        // scroll în sus → arată
+        header.classList.remove('hide');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+</script>
+
+        <!-- JAVASCRIPTS -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootsnav.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/scrollspy.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/custom.js"></script>
+
+
+   
+	  		<script>
+    /*const citiesInTurkey = [
+        "istanbul", "ankara", "izmir", "antalya", "bursa",
+        "adana", "gaziantep", "konya", "trabzon", "kayseri",
+        "mardin", "sanliurfa", "cappadocia", "pamukkale"
+    ];*/
+
+    function searchCity(event) {
+    event.preventDefault();
+    const input = document.getElementById("location-input").value.trim().toLowerCase();
+
+    const citiesMap = {
+        "istanbul": "istanbul.php",
+        "ankara": "ankara.php",
+        "izmir": "izmir.php",
+        "antalya": "antalya.php",
+        "bursa": "bursa.php",
+        "adana": "adana.php",
+        "gaziantep": "gaziantep.php",
+        "konya": "konya.php",
+        "trabzon": "trabzon.php",
+        "kayseri": "kayseri.php",
+        "mardin": "mardin.php",
+        "sanliurfa": "sanliurfa.php",
+        "cappadocia": "cappadocia.php",
+        "pamukkale": "pamukkale.php"
+    };
+
+    if (citiesMap[input]) {
+        window.location.href = citiesMap[input];
+    } else {
+        alert("The city is not on our list in Turkey. Try another one!");
+    }
+}
+
+
+</script>
+<!-- Pop-up pentru text (How It Works) -->
+<div id="popuptext" class="popuptext" style="display: none;">
+    <span class="close" onclick="closePopupText()">&times;</span>
+    <div class="popuptext-content">
+        <p id="popuptext-content-text"></p>
+    </div>
+</div>
+
+
+
+ <script>
+function openPopupText(text) {
+    document.getElementById("popuptext-content-text").innerText = text;
+    document.getElementById("popuptext").style.display = "flex";
+}
+
+function closePopupText() {
+    document.getElementById("popuptext").style.display = "none";
+}
+</script>
+
+	
+<script>
+function openMap(location) {
+    const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(location)}&output=embed`;
+    document.getElementById('mapIframe').src = mapUrl;
+    document.getElementById('mapModal').style.display = 'block';
+}
+
+function closeMap() {
+    document.getElementById('mapModal').style.display = 'none';
+    document.getElementById('mapIframe').src = ''; // reset la închidere
+}
+</script>
+
+
+
+<!-- JAVASCRIPTS -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/locations.js"></script>
+<script src="assets/js/favorites.js"></script>
+
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+</body>
+	
+</html>

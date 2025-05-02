@@ -1,0 +1,794 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <?php include_once 'header.php'?>
+
+<body>
+<!-- header-top start -->
+<header id="header-top" class="header-top">
+    <ul>
+        <li>
+            <div class="header-top-left">
+                <ul>
+                    <li class="select-opt">
+                        <select name="language" id="language">
+                            <option value="default">EN</option>
+                        </select>
+                    </li>
+                    <li class="select-opt">
+                        <select name="currency" id="currency">
+                            <option value="usd">USD</option>
+                        </select>
+                    </li>
+                    <li class="select-opt">
+                        <a href="#"><span class="lnr lnr-magnifier"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</header>
+
+<!-- Navigation Start -->
+<section class="top-area">
+    <div class="header-area">
+        <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.php">explore<span>turkey</span></a>
+                </div>
+                <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="scroll active"><a href="#home">home</a></li>
+                        <li class="scroll"><a href="#explore">explore</a></li>
+                        <li class="scroll"><a href="#reviews">review</a></li>
+						<li class="scroll"><a href="#blog">blog</a></li>
+                        <li class="scroll"><a href="#contact">contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<!-- Welcome Hero -->
+<section id="home" class="welcome-hero" style="background: url('assets/images/turkey/Izmir.jpg') no-repeat center center/cover;">
+    <div class="container">
+        <div class="welcome-hero-txt">
+            <h2>Explore Izmir</h2>
+            <p>Experience the vibrant coastal life of Turkey's Aegean gem.</p>
+        </div>
+        <div class="welcome-hero-serch-box">
+            <div class="welcome-hero-form">
+                <div class="single-welcome-hero-form">
+                    <h3>location</h3>
+					<form onsubmit="searchCity(event)">
+                    <form action="izmir.php">
+                        <input type="text" id="location-input" placeholder="Ex: Istanbul, Antalya, Izmir...">
+                    </form>
+                </div>
+            </div>
+            <div class="welcome-hero-serch">
+                <button class="welcome-hero-btn" onclick="searchCity(event)">search</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+	<!--list-topics start -->
+	<section id="list-topics" class="list-topics">
+	<div class="container">
+		<div class="list-topics-content">
+			<ul>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/Pamukkale.jpg" style="width: 100px;" alt="Pamukkale" onclick="openPopup('assets/images/turkey/Pamukkale.jpg')">
+						</div>
+						<h2><a href="pamukkale.php">Pamukkale</a></h2>
+						<p>Thermal Springs & Wonders</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/bursa.jpg" style="width: 100px;" alt="Bursa" onclick="openPopup('assets/images/turkey/bursa.jpg')">
+						</div>
+						<h2><a href="bursa.php">Bursa</a></h2>
+						<p>Discover the green city.</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/ankara.jpg" style="width: 100px;" alt="Ankara" onclick="openPopup('assets/images/turkey/ankara.jpg')">
+						</div>
+						<h2><a href="ankara.php">Ankara</a></h2>
+						<p>Discover the political heart.</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/gaziantep.jpg" style="width: 100px;" alt="Gaziantep" onclick="openPopup('assets/images/turkey/gaziantep.jpg')">
+						</div>
+						<h2><a href="gaziantep.php">Gaziantep</a></h2>
+						<p>Discover the delicious cuisine.</p>
+					</div>
+				</li>
+				<li>
+					<div class="single-list-topics-content">
+						<div class="single-list-topics-icon">
+							<!-- Imagine mică cu pop-up -->
+							<img src="assets/images/turkey/konya.jpg" style="width: 100px;" alt="Konya" onclick="openPopup('assets/images/turkey/konya.jpg')">
+						</div>
+						<h2><a href="konya.php">Konya</a></h2>
+						<p>Discover the spiritual heart of Turkey</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- Fereastra pop-up (ascunsă inițial) -->
+<!-- Fereastra pop-up pentru imagini -->
+<div id="popup" class="popup" style="display: none;">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-img" class="popup-content" src="" alt="Pop-up Imagine">
+</div>
+
+
+	
+<!-- Explore Izmir -->
+<section id="explore" class="explore">
+    <div class="container">
+        <div class="section-header">
+            <h2>Explore Izmir</h2>
+        </div>
+        <div class="explore-content">
+            <div class="row">
+<!-- 1. Clock Tower -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/clock-tower.jpg" alt="Clock Tower Izmir">
+      <div class="single-explore-img-info">
+        <button>historic</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Clock Tower', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Clock Tower, Izmir')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">Clock Tower</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.7</span>
+        <a href="#">90 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+        <a href="#">Monument</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>The iconic symbol of İzmir located in Konak Square, built in 1901.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Kemeraltı Bazaar -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/kemeralti-bazaar.jpg" alt="Kemeraltı Bazaar">
+      <div class="single-explore-img-info">
+        <button>shopping</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Kemeraltı Bazaar', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Kemeraltı Bazaar, Izmir')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-2">
+      <h2><a href="#">Kemeraltı Bazaar</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.6</span>
+        <a href="#">70 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+        <a href="#">Bazaar</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Vibrant and colorful bazaar district, full of local shops and street food.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. Kadifekale -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/kadifekale.jpg" alt="Kadifekale">
+      <div class="single-explore-img-info">
+        <button>historic</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Kadifekale', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Kadifekale, Izmir')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">Kadifekale</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.5</span>
+        <a href="#">55 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+        <a href="#">Castle</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Ancient hilltop fortress with panoramic views over İzmir and the coastline.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4. Alsancak -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/alsancak.jpg" alt="Alsancak">
+      <div class="single-explore-img-info">
+        <button>lifestyle</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Alsancak', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Alsancak, Izmir')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-2">
+      <h2><a href="#">Alsancak</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.8</span>
+        <a href="#">80 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">Free</span></span>
+        <a href="#">District</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Trendy area filled with cafés, boutiques, and the famous Kordon seaside promenade.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. İzmir Archaeological Museum -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/izmir-archaeological-museum.jpg" alt="Izmir Archaeological Museum">
+      <div class="single-explore-img-info">
+        <button>museum</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Izmir Archaeological Museum', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Izmir Archaeological Museum')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-1">
+      <h2><a href="#">İzmir Archaeological Museum</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.6</span>
+        <a href="#">40 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">50 TL</span></span>
+        <a href="#">Museum</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Rich collection of artifacts from ancient Smyrna and surrounding areas.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6. Agora of Smyrna -->
+<div class="col-md-4 col-sm-6">
+  <div class="single-explore-item">
+    <div class="single-explore-img">
+      <img src="assets/images/explore/agora-of-smyrna.jpg" alt="Agora of Smyrna">
+      <div class="single-explore-img-info">
+        <button>archaeology</button>
+        <div class="single-explore-image-icon-box">
+          <ul>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); toggleLike('Agora of Smyrna', this.querySelector('i'))"><i class="fa fa-heart-o"></i></a></div></li>
+            <li><div class="single-explore-image-icon"><a href="#" onclick="event.preventDefault(); openMap('Agora of Smyrna, Izmir')"><i class="fa fa-map-marker"></i></a></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="single-explore-txt bg-theme-2">
+      <h2><a href="#">Agora of Smyrna</a></h2>
+      <p class="explore-rating-price">
+        <span class="explore-rating">4.5</span>
+        <a href="#">50 ratings</a>
+        <span class="explore-price-box">price: <span class="explore-price">30 TL</span></span>
+        <a href="#">Ancient Agora</a>
+      </p>
+      <div class="explore-person">
+        <div class="row">
+          <div class="col-sm-2"><div class="explore-person-img"><a href="#"><img src="assets/images/users/user-placeholder.jpg" alt="User"></a></div></div>
+          <div class="col-sm-10"><p>Ruins of the ancient marketplace of Smyrna, beautifully preserved in the heart of Izmir.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+                
+    </div>
+</section>
+<!-- Modal pentru hartă -->
+<div id="mapModal" class="popup" style="display: none; position: fixed; z-index: 10000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 600px; height: 400px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+    <span class="close" onclick="closeMap()" style="position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer;">&times;</span>
+    <iframe id="mapIframe" src="" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+		<!--reviews start -->
+		<section id="reviews" class="reviews">
+	<div class="section-header">
+		<h2>clients reviews</h2>
+		<p>What our clients say about Izmir!</p>
+	</div>
+	<div class="reviews-content">
+		<div class="testimonial-carousel">
+
+			<!-- Review 1 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c1.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Selin Aksoy</h2>
+							<h4>Izmir</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"The Kordon is perfect for sunset walks. It’s peaceful and stylish."</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review 2 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c2.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>David Steiner</h2>
+							<h4>Izmir</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Modern, clean city with a European vibe. Loved the cafes and vibe!"</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review 3 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c3.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Zeynep Duran</h2>
+							<h4>Izmir</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Konak Meydanı ve Saat Kulesi en favori yerlerimdi. Çok fotojenik bir şehir!"</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review 4 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c4.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Carmen Díaz</h2>
+							<h4>Izmir</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Too hot in July, but the beach towns nearby made it all worth it!"</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review 5 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c5.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Mehmet Karaca</h2>
+							<h4>Izmir</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Şehir çok ferah ve rahat. Ulaşım kolay, insanları sıcak. Tavsiye ederim."</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review 6 -->
+			<div class="single-testimonial-box">
+				<div class="testimonial-description">
+					<div class="testimonial-info">
+						<div class="testimonial-img"><img src="assets/images/clients/c6.png" alt="client"></div>
+						<div class="testimonial-person">
+							<h2>Ilinca Moraru</h2>
+							<h4>Izmir</h4>
+							<div class="testimonial-person-star">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+							</div>
+						</div>
+					</div>
+					<div class="testimonial-comment">
+						<p>"Oraș perfect de vacanță! Modern, curat, oameni relaxați și vibe prietenos."</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+		<!--reviews end -->
+		<!--blog start -->
+		<section id="blog" class="blog">
+	<div class="container">
+		<div class="section-header">
+			<h2>FUN FACTS</h2>
+			<p>Fresh updates and fun facts to inspire your next Turkish adventure.</p>
+		</div><!--/.section-header-->
+		<div class="blog-content">
+			<div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/izmir1.jpg" alt="Clock Tower Izmir">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Iconic Clock Tower</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> april 2025</h4>
+							<p>
+								The famous Izmir Clock Tower, built in 1901, is the city’s most recognizable symbol and a central meeting spot in Konak Square. <br><br>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/izmir2.jpg" alt="Agora Ancient City">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>Ancient Agora site</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> april 2025</h4>
+							<p>
+								Izmir’s ancient Agora was once a bustling Greek and Roman marketplace — you can still walk among its marble columns today! <br><br>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-6">
+					<div class="single-blog-item">
+						<div class="single-blog-item-img">
+							<img src="assets/images/blog/izmir3.jpg" alt="Izmir coastline">
+						</div>
+						<div class="single-blog-item-txt">
+							<h2>City of sea breezes</h2>
+							<h4>posted <span>by</span> <a href="#admin">admin</a> may 2025</h4>
+							<p>
+								Nestled along the Aegean coast, Izmir enjoys a laid-back vibe, with its Kordon promenade perfect for seaside strolls at sunset.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--/.container-->
+</section><!--/.blog-->
+
+		<!--blog end -->
+
+		<!--subscription strat -->
+		<section id="contact"  class="subscription">
+			<div class="container">
+				<div class="subscribe-title text-center">
+					<h2>
+						Plan Your Trip
+					</h2>
+					<p>
+						Do you have questions about famous landmarks in Turkey or need help planning your cultural journey?<br> Get in touch with us – we’re here to guide you!
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="subscription-input-group">
+							<form action="#">
+								<input type="email" class="subscription-input-form" placeholder="Enter your email here">
+								<button class="appsLand-btn subscribe-btn" onclick="submitEmailLogin(event)">
+    create account
+</button>
+
+							</form>
+						</div>
+					</div>	
+				</div>
+			</div>
+
+		</section><!--/subscription-->	
+		<!--subscription end -->
+
+		<!--footer start-->
+		<footer id="footer"  class="footer">
+			<div class="container">
+				<div class="footer-menu">
+		           	<div class="row">
+			           	<div class="col-sm-3">
+			           		 <div class="navbar-header">
+				                <a class="navbar-brand" href="index.php">explore<span>turkey</span></a>
+				            </div><!--/.navbar-header-->
+			           	</div>
+			           	<div class="col-sm-9">
+			           		<ul class="footer-menu-item">			         
+			                    <li class="scroll"><a href="#explore">explore</a></li>
+			                    <li class="scroll"><a href="#reviews">review</a></li>
+			                    <li class="scroll"><a href="#blog">blog</a></li>
+			                    <li class="scroll"><a href="#contact">contact</a></li>
+			                    <li class=" scroll"><a href="#contact">my account</a></li>
+			                </ul><!--/.nav -->
+			           	</div>
+		           </div>
+				</div>
+				<div class="hm-footer-copyright">
+					<div class="row">
+						<div class="col-sm-5">
+							<p>
+								&copy;copyright. designed and developed by Alice, Ioana & Andreea.
+							</p><!--/p-->
+						</div>
+						<div class="col-sm-7">
+							<div class="footer-social">
+								<span><i class="fa fa-phone"> +1  (222) 777 8888</i></span>
+								<a href="#facebook"><i class="fa fa-facebook"></i></a>	
+								<a href="#twitter"><i class="fa fa-twitter"></i></a>
+								<a href="#linkedin"><i class="fa fa-linkedin"></i></a>
+								<a href="#googleplus"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					
+				</div><!--/.hm-footer-copyright-->
+			</div><!--/.container-->
+			
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.footer-->
+		<!--footer end-->
+		<!-- Message box -->
+     <div id="message-box" class="message-box hidden"></div>
+<!-- Slide simplu pentru My Favorites -->
+<div id="favorites-panel" class="favorites-slide">
+  <span class="close-favorites" onclick="toggleFavoritesPanel()">x</span>
+  <h3 class="favorites-title">My Favorites</h3>
+  <div class="favorites-list"></div> <!-- Asta lipsea! -->
+  <div id="message-box" class="message-box hidden"></div>
+</div>
+
+
+<!-- Modal pentru hartă -->
+<div id="mapModal" class="popup" style="display: none; position: fixed; z-index: 10000; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 600px; height: 400px; background: white; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.5);">
+    <span class="close" onclick="closeMap()" style="position:absolute; top:10px; right:20px; font-size:28px; cursor:pointer;">&times;</span>
+    <iframe id="mapIframe" src="" width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- Include all js compiled plugins (below), or include individual files as needed -->
+  <script>
+let lastScrollTop = 0;
+const header = document.querySelector('.header-area');
+
+window.addEventListener('scroll', function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+        // scroll în jos → ascunde
+        header.classList.add('hide');
+    } else {
+        // scroll în sus → arată
+        header.classList.remove('hide');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+</script>
+
+<script src="assets/js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		<script>
+    /*const citiesInTurkey = [
+        "istanbul", "ankara", "izmir", "antalya", "bursa",
+        "adana", "gaziantep", "konya", "trabzon", "kayseri",
+        "mardin", "sanliurfa", "cappadocia", "pamukkale"
+    ];*/
+
+    function searchCity(event) {
+    event.preventDefault();
+    const input = document.getElementById("location-input").value.trim().toLowerCase();
+
+    const citiesMap = {
+        "istanbul": "istanbul.php",
+        "ankara": "ankara.php",
+        "izmir": "izmir.php",
+        "antalya": "antalya.php",
+        "bursa": "bursa.php",
+        "adana": "adana.php",
+        "gaziantep": "gaziantep.php",
+        "konya": "konya.php",
+        "trabzon": "trabzon.php",
+        "kayseri": "kayseri.php",
+        "mardin": "mardin.php",
+        "sanliurfa": "sanliurfa.php",
+        "cappadocia": "cappadocia.php",
+        "pamukkale": "pamukkale.php"
+    };
+
+    if (citiesMap[input]) {
+        window.location.href = citiesMap[input];
+    } else {
+        alert("The city is not on our list in Turkey. Try another one!");
+    }
+}
+
+
+</script>
+<!-- Pop-up pentru text (How It Works) -->
+<div id="popuptext" class="popuptext" style="display: none;">
+    <span class="close" onclick="closePopupText()">&times;</span>
+    <div class="popuptext-content">
+        <p id="popuptext-content-text"></p>
+    </div>
+</div>
+
+
+
+ <script>
+function openPopupText(text) {
+    document.getElementById("popuptext-content-text").innerText = text;
+    document.getElementById("popuptext").style.display = "flex";
+}
+
+function closePopupText() {
+    document.getElementById("popuptext").style.display = "none";
+}
+</script>
+
+
+<script>
+function openMap(location) {
+    const mapUrl = `https://www.google.com/maps?q=${encodeURIComponent(location)}&output=embed`;
+    document.getElementById('mapIframe').src = mapUrl;
+    document.getElementById('mapModal').style.display = 'block';
+}
+
+function closeMap() {
+    document.getElementById('mapModal').style.display = 'none';
+    document.getElementById('mapIframe').src = ''; // reset la închidere
+}
+</script>
+
+
+        <!-- JAVASCRIPTS -->
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/locations.js"></script>
+<script src="assets/js/favorites.js"></script>
+
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="assets/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+        <!--feather.min.js-->
+        <script  src="assets/js/feather.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+        <!--slick.min.js-->
+        <script src="assets/js/slick.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+		     
+        <!--Custom JS-->
+        <script src="assets/js/custom.js"></script>
+
+
+
+</body>
+</html>
